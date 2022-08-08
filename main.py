@@ -1,11 +1,12 @@
 import car
+import rpi
 from Tkinter import *
 import tkMessageBox
 
 root = Tk(className = "OpenCar")
 root.geometry("800x600")
 
-# TK WIDgents
+# TK wigets
 
 
 # MENU BAR
@@ -28,6 +29,8 @@ def obd_speed():
     speed_var.set(car.response_speed)
 def obd_rpm():
     rpm_var.set(car.response_rpm.value)
+def obd_fuel():
+    fuel_var.set(car.response_fuel.value)
 def do_nothing():
     print("da")
 #Speed button
@@ -54,7 +57,10 @@ rpmtext.grid(row=3,column=2)
 #Ports Text
 connectionstatus = Label(root,text=car.connectstats).grid(row=0,column=0)
 ports = Label(root,text=car.ports).grid(row=0,column=2)
-
+# Fuel Level Text
+fuel_var = StringVar()
+fuel_var.set("Fuel Level: ")
+fueltext = Label(root,textvariable=fuel_var).grid(row=5,column=2)
 # END
 root.mainloop()
 root.destroy()

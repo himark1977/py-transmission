@@ -11,5 +11,3 @@ read_fuel = obd.commands.FUEL_LEVEL
 response_fuel = connection.query(read_fuel)
 response_speed = connection.query(read_speed) # send the command, and parse the response
 response_rpm = connection.query(read_rpm)
-
-
